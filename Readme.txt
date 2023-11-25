@@ -1,4 +1,4 @@
-# MediBuddy App
+# Medibbudy App
 
 Welcome to MediBuddy - Your Dedicated Medicine Management Companion!
 
