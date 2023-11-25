@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import backgroundImage from "./images/homebg.jpg";
 
 const Home = () => {
-  const quotes = [
-    "Laughter is the best medicine!",
-    "An apple a day keeps the doctor away.",
-    "The greatest wealth is health.",
-    "Your health is an investment, not an expense.",
-    "Wrinkles should merely indicate where smiles have been",
-    "The spirit never ages. It stays forever young",
-  ];
+  const quotes = useMemo(
+    () => [
+      "Laughter is the best medicine!",
+      "An apple a day keeps the doctor away.",
+      "The greatest wealth is health.",
+      "Your health is an investment, not an expense.",
+      "Wrinkles should merely indicate where smiles have been",
+      "The spirit never ages. It stays forever young",
+    ],
+    []
+  );
 
   const [currentQuote, setCurrentQuote] = useState(quotes[0]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      // Rotate to the next quote in the array
       const currentIndex = quotes.indexOf(currentQuote);
       const nextIndex = (currentIndex + 1) % quotes.length;
       setCurrentQuote(quotes[nextIndex]);
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, [currentQuote, quotes]);
@@ -31,20 +33,20 @@ const Home = () => {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start", // Updated to flex-start
+    justifyContent: "flex-start",
     alignItems: "flex-end",
     color: "white",
     padding: "50px",
     textAlign: "right",
-    position: "relative", // Added position relative
+    position: "relative",
   };
 
   const quoteStyle = {
     fontSize: "1.5rem",
-    fontStyle: "Bold",
+    fontWeight: "bold",
     position: "absolute",
-    top: "160px", // Adjust the top position as needed
-    right: "20px", // Adjust the right position as needed
+    top: "160px",
+    right: "20px",
   };
 
   return (
