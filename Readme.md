@@ -1,7 +1,7 @@
 # Medibbudy App
 
 
-# Hosting link- https://main--sunny-piroshki-bc1ac1.netlify.app/Signup
+# Hosting link- https://main--sunny-piroshki-bc1ac1.netlify.app/
 Welcome to MediBuddy - Your Dedicated Medicine Management Companion!
 
 ## Table of Contents
